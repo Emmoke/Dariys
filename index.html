@@ -48,7 +48,7 @@
     <div class="bg-slate-950 text-slate-300 text-xs py-2.5 px-4 sm:px-8 border-b border-slate-800">
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
             <div class="flex items-center space-x-6 rtl:space-x-reverse">
-                <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-orange-400"></i> Rotfuchsstrasse.1 04329 Leipzig</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-orange-400"></i> Rotfuchsstraße 1, 04329 Leipzig</span>
                 <a href="tel:+4917643416174" class="hover:text-white transition flex items-center gap-2"><i class="fa-solid fa-phone text-blue-400"></i> +49 176 43416174</a>
                 <a href="mailto:daryos.kreis@gmail.com" class="hidden md:flex items-center gap-2 hover:text-white transition"><i class="fa-solid fa-envelope text-orange-400"></i> daryos.kreis@gmail.com</a>
             </div>
@@ -119,7 +119,7 @@
                     Ihre Tarife für <span class="text-blue-500">Strom</span>, <span class="text-orange-500">Gas</span>, <span class="text-indigo-400">Internet</span> & <span class="text-emerald-400">Autoversicherung</span> im optimalen Vergleich.
                 </h1>
                 <p class="text-lg text-slate-300 max-w-2xl font-normal leading-relaxed" id="heroDesc">
-                    Wir helfen Ihnen in Leipzig und deutschlandweit, die günstigsten Verträge ohne versteckte Kosten zu finden. Kostenlos, schnell und transparent.
+                    Wir unterstützen Sie in Leipzig und deutschlandweit dabei, Ihre Verträge zu prüfen und mögliche Alternativen zu vergleichen. Ob ein Wechsel sinnvoll ist, hängt von Ihrem Tarif und Bedarf ab.
                 </p>
                 
                 <div class="flex flex-wrap gap-4 pt-2">
@@ -134,7 +134,6 @@
                 </div>
             </div>
 
-            <!-- EXACT QUICK SAVINGS CHECK FORM -->
             <div class="lg:col-span-5" id="quickcheck">
                 <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-700/80 relative">
                     <div class="flex items-center justify-between mb-6 border-b border-slate-800 pb-4">
@@ -144,34 +143,11 @@
                         <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-bold px-3 py-1 rounded-full uppercase" id="badgeGratis">Gratis</span>
                     </div>
 
-                    <form onsubmit="handleQuickCheck(event)" class="space-y-5">
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" id="lblContractType">Vertragsart wählen</label>
-                            <select id="quickType" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer">
-                                <option value="Strom">⚡ Stromvertrag</option>
-                                <option value="Gas">🔥 Gasvertrag</option>
-                                <option value="Internet">🌐 Internet & Festnetz</option>
-                                <option value="KFZ">🚗 KFZ-Versicherung</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" id="lblCurrentPay">Aktuelle monatliche Kosten (€)</label>
-                            <input type="number" id="quickAmount" placeholder="z.B. 120" min="1" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" id="lblPhone">Telefonnummer für Rückruf</label>
-                            <input type="tel" id="quickPhone" placeholder="+49 176 ..." required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-
-                        <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-base">
-                            <span id="btnQuickSubmit">Ersparnis Anfordern</span>
-                            <i class="fa-solid fa-paper-plane text-sm"></i>
-                        </button>
-                    </form>
-
-                    <div id="quickCheckResult" class="hidden mt-5 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl text-emerald-400 text-xs text-center font-semibold space-y-1"></div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-5" id="quickCheckDesc">Eine verlässliche Einschätzung ist erst nach Prüfung Ihres Vertrags möglich. Vereinbaren Sie einen persönlichen Beratungstermin.</p>
+                    <a href="#booking" class="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-base">
+                        <span id="quickCheckBook">Beratungstermin anfragen</span>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
                 </div>
             </div>
 
@@ -183,7 +159,7 @@
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
                 <span class="text-orange-500 font-semibold text-xs uppercase tracking-widest" id="secServicesSub">Transparente Optimierung</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white" id="secServicesTitle">Gezielte Beratung für Ihre Verträge</h2>
-                <p class="text-slate-400 text-sm sm:text-base" id="secServicesDesc">Wir prüfen Ihre laufenden Verträge und ermitteln direkt günstigere Alternativen mit identischen oder besseren Leistungen.</p>
+                <p class="text-slate-400 text-sm sm:text-base" id="secServicesDesc">Wir unterstützen Sie beim Vergleich Ihrer laufenden Verträge mit möglichen Alternativen. Konditionen und Leistungen hängen vom jeweiligen Anbieter und Tarif ab.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -196,11 +172,11 @@
                         </div>
                         <div class="p-6 space-y-2">
                             <h3 class="text-xl font-bold text-white" id="cardStromTitle">Stromvertrag</h3>
-                            <p class="text-slate-400 text-xs leading-relaxed" id="cardStromDesc">Wechsel zu günstigen Öko- oder Standardtarifen. Wir sichern Neukundenboni und Preisgarantien.</p>
+                            <p class="text-slate-400 text-xs leading-relaxed" id="cardStromDesc">Vergleich von Öko- oder Standardtarifen. Je nach Angebot können Neukundenboni oder Preisgarantien verfügbar sein.</p>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <a href="#booking" onclick="preselectService('Strom')" class="text-blue-400 font-bold text-xs flex items-center gap-2 hover:gap-3 transition-all">
+                        <a href="#booking" class="text-blue-400 font-bold text-xs flex items-center gap-2 hover:gap-3 transition-all">
                             <span id="btnMore1">Beratung buchen</span> <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
@@ -219,7 +195,7 @@
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <a href="#booking" onclick="preselectService('Gas')" class="text-orange-400 font-bold text-xs flex items-center gap-2 hover:gap-3 transition-all">
+                        <a href="#booking" class="text-orange-400 font-bold text-xs flex items-center gap-2 hover:gap-3 transition-all">
                             <span id="btnMore2">Beratung buchen</span> <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
@@ -238,7 +214,7 @@
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <a href="#booking" onclick="preselectService('Internet')" class="text-indigo-400 font-bold text-xs flex items-center gap-2 hover:gap-3 transition-all">
+                        <a href="#booking" class="text-indigo-400 font-bold text-xs flex items-center gap-2 hover:gap-3 transition-all">
                             <span id="btnMore3">Beratung buchen</span> <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
@@ -257,7 +233,7 @@
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <a href="#booking" onclick="preselectService('KFZ-Versicherung')" class="text-emerald-400 font-bold text-xs flex items-center gap-2 hover:gap-3 transition-all">
+                        <a href="#booking" class="text-emerald-400 font-bold text-xs flex items-center gap-2 hover:gap-3 transition-all">
                             <span id="btnMore4">Beratung buchen</span> <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
@@ -266,75 +242,30 @@
         </div>
     </section>
 
+    <section id="about" class="py-16 bg-black border-t border-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <h2 class="text-3xl font-extrabold text-white" id="aboutTitle">Beratung, die zu Ihrem Bedarf passt</h2>
+            <p class="text-slate-400 leading-relaxed" id="aboutDesc">Wir unterstützen Sie dabei, bestehende Verträge zu prüfen und mögliche Alternativen zu vergleichen. Ob sich ein Wechsel lohnt, hängt von Ihrem Tarif, Ihrem Bedarf und den aktuellen Konditionen ab.</p>
+        </div>
+    </section>
+
     <section id="booking" class="py-20 bg-black border-t border-slate-900">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 space-y-2">
                 <span class="text-blue-500 font-bold text-xs uppercase tracking-widest" id="bookSub">Terminvereinbarung</span>
                 <h2 class="text-3xl font-extrabold text-white" id="bookTitle">Buchen Sie Ihren persönlichen Beratungstermin</h2>
-                <p class="text-slate-400 text-sm" id="bookDesc">Kostenfrei vor Ort in Leipzig (Rotfuchsstrasse 1), telefonisch oder per Online-Video.</p>
+                <p class="text-slate-400 text-sm" id="bookDesc">Fragen Sie Ihren Beratungstermin telefonisch oder per WhatsApp an.</p>
             </div>
 
-            <div class="bg-slate-900 p-8 sm:p-10 rounded-3xl border border-slate-800 shadow-2xl">
-                <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-6">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 mb-2" id="lblBookName">Vollständiger Name *</label>
-                            <input type="text" required id="bookName" placeholder="Max Mustermann" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 mb-2" id="lblBookPhone">Telefonnummer / WhatsApp *</label>
-                            <input type="tel" required id="bookPhone" placeholder="+49 176 12345678" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 mb-2" id="lblBookService">Beratungsthema *</label>
-                            <select id="bookService" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                <option value="Alle">Gesamte Vertragsübersicht (Strom, Gas, Net, KFZ)</option>
-                                <option value="Strom">⚡ Stromvertrag</option>
-                                <option value="Gas">🔥 Gasvertrag</option>
-                                <option value="Internet">🌐 Internet & Festnetz</option>
-                                <option value="KFZ-Versicherung">🚗 Autoversicherung</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 mb-2" id="lblBookType">Beratungsform *</label>
-                            <select id="bookType" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                <option value="Telefon">📞 Telefonische Beratung</option>
-                                <option value="Vor Ort">📍 Vor Ort im Büro (Rotfuchsstrasse 1, Leipzig)</option>
-                                <option value="Online Video">💻 Online Video-Meeting</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 mb-2" id="lblBookDate">Wunschdatum *</label>
-                            <input type="date" required id="bookDate" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 mb-2" id="lblBookTime">Wunschuhrzeit *</label>
-                            <select id="bookTime" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                <option value="10:00 Uhr">10:00 Uhr</option>
-                                <option value="12:00 Uhr">12:00 Uhr</option>
-                                <option value="14:30 Uhr">14:30 Uhr</option>
-                                <option value="16:30 Uhr">16:30 Uhr</option>
-                                <option value="18:00 Uhr">18:00 Uhr</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="w-full bg-orange-500 hover:bg-orange-400 text-slate-950 font-extrabold py-4 rounded-xl shadow-xl transition text-base flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-calendar-check"></i>
-                        <span id="btnBookSubmit">Termin Verbindlich Anfragen</span>
-                    </button>
-                </form>
-
-                <div id="bookingConfirmation" class="hidden mt-6 p-6 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl text-center text-emerald-400 space-y-2">
-                    <i class="fa-solid fa-circle-check text-4xl"></i>
-                    <h4 class="text-xl font-bold" id="confTitle">Terminanfrage Erfolgreich!</h4>
-                    <p class="text-sm text-slate-300" id="confDesc">Vielen Dank. Wir bestätigen Ihren Termin in Kürze per SMS oder Anruf.</p>
+            <div class="bg-slate-900 p-8 sm:p-10 rounded-3xl border border-slate-800 shadow-2xl text-center">
+                <p class="text-slate-300 leading-relaxed mb-6" id="bookingContactDesc">Eine Online-Buchung ist derzeit nicht verfügbar. Bitte kontaktieren Sie uns direkt, um einen Termin abzustimmen.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="tel:+4917643416174" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3 rounded-xl transition flex items-center gap-2">
+                        <i class="fa-solid fa-phone"></i><span id="bookingCall">Anrufen</span>
+                    </a>
+                    <a href="https://wa.me/4917643416174" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3 rounded-xl transition flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp"></i><span id="bookingWhatsApp">Per WhatsApp kontaktieren</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -351,7 +282,7 @@
                             <i class="fa-solid fa-location-dot text-orange-500 text-lg mt-1"></i>
                             <div>
                                 <div class="text-xs text-slate-400">Adresse</div>
-                                <div class="text-sm font-semibold text-white">Rotfuchsstrasse.1 04329 Leipzig</div>
+                                <div class="text-sm font-semibold text-white">Rotfuchsstraße 1, 04329 Leipzig</div>
                             </div>
                         </div>
 
@@ -404,7 +335,7 @@
                 <span>– Strom, Gas, Internet und Autoversicherung</span>
             </div>
             <div>
-                © <span id="currentYear"></span> Daryos®. Alle Rechte vorbehalten. Rotfuchsstrasse.1 04329 Leipzig
+                © <span id="currentYear"></span> Daryos®. Alle Rechte vorbehalten. Rotfuchsstraße 1, 04329 Leipzig
             </div>
         </div>
     </footer>
@@ -423,17 +354,15 @@
                 btnHeaderBook: "Termin Buchen",
                 heroBadge: "Unabhängige Beratung & Wechselhilfe",
                 heroTitle: "Ihre Tarife für Strom, Gas, Internet & Autoversicherung im optimalen Vergleich.",
-                heroDesc: "Wir helfen Ihnen in Leipzig und deutschlandweit, die günstigsten Verträge ohne versteckte Kosten zu finden. Kostenlos, schnell und transparent.",
+                heroDesc: "Wir unterstützen Sie in Leipzig und deutschlandweit dabei, Ihre Verträge zu prüfen und mögliche Alternativen zu vergleichen. Ob ein Wechsel sinnvoll ist, hängt von Ihrem Tarif und Bedarf ab.",
                 heroBtn1: "Termin Vereinbaren",
                 quickCheckTitle: "Schnell-Kosten-Check",
                 badgeGratis: "Gratis",
-                lblContractType: "Vertragsart wählen",
-                lblCurrentPay: "Aktuelle monatliche Kosten (€)",
-                lblPhone: "Telefonnummer für Rückruf",
-                btnQuickSubmit: "Ersparnis Anfordern",
+                quickCheckDesc: "Eine verlässliche Einschätzung ist erst nach Prüfung Ihres Vertrags möglich. Vereinbaren Sie einen persönlichen Beratungstermin.",
+                quickCheckBook: "Beratungstermin anfragen",
                 secServicesSub: "Transparente Optimierung",
                 secServicesTitle: "Gezielte Beratung für Ihre Verträge",
-                secServicesDesc: "Wir prüfen Ihre laufenden Verträge und ermitteln direkt günstigere Alternativen mit identischen oder besseren Leistungen.",
+                secServicesDesc: "Wir unterstützen Sie beim Vergleich Ihrer laufenden Verträge mit möglichen Alternativen. Konditionen und Leistungen hängen vom jeweiligen Anbieter und Tarif ab.",
                 cardStromTitle: "Stromvertrag",
                 cardStromDesc: "Wechsel zu günstigen Öko- oder Standardtarifen. Wir sichern Neukundenboni und Preisgarantien.",
                 cardGasTitle: "Gasvertrag",
@@ -446,18 +375,14 @@
                 btnMore2: "Beratung buchen",
                 btnMore3: "Beratung buchen",
                 btnMore4: "Beratung buchen",
+                aboutTitle: "Beratung, die zu Ihrem Bedarf passt",
+                aboutDesc: "Wir unterstützen Sie dabei, bestehende Verträge zu prüfen und mögliche Alternativen zu vergleichen. Ob sich ein Wechsel lohnt, hängt von Ihrem Tarif, Ihrem Bedarf und den aktuellen Konditionen ab.",
                 bookSub: "Terminvereinbarung",
-                bookTitle: "Buchen Sie Ihren persönlichen Beratungstermin",
-                bookDesc: "Kostenfrei vor Ort in Leipzig (Rotfuchsstrasse 1), telefonisch oder per Online-Video.",
-                lblBookName: "Vollständiger Name *",
-                lblBookPhone: "Telefonnummer / WhatsApp *",
-                lblBookService: "Beratungsthema *",
-                lblBookType: "Beratungsform *",
-                lblBookDate: "Wunschdatum *",
-                lblBookTime: "Wunschuhrzeit *",
-                btnBookSubmit: "Termin Verbindlich Anfragen",
-                confTitle: "Terminanfrage Erfolgreich!",
-                confDesc: "Vielen Dank. Wir bestätigen Ihren Termin in Kürze per SMS oder Anruf.",
+                bookTitle: "Beratungstermin vereinbaren",
+                bookDesc: "Fragen Sie Ihren Beratungstermin telefonisch oder per WhatsApp an.",
+                bookingContactDesc: "Eine Online-Buchung ist derzeit nicht verfügbar. Bitte kontaktieren Sie uns direkt, um einen Termin abzustimmen.",
+                bookingCall: "Anrufen",
+                bookingWhatsApp: "Per WhatsApp kontaktieren",
                 cntTitle: "Kontakt & Adresse",
                 hoursTitle: "Öffnungs- & Beratungszeiten"
             },
@@ -471,17 +396,15 @@
                 btnHeaderBook: "Book Appointment",
                 heroBadge: "Independent Consulting & Switching Help",
                 heroTitle: "Your tariffs for Electricity, Gas, Internet & Car Insurance optimal compared.",
-                heroDesc: "We help you in Leipzig and across Germany find the cheapest contracts without hidden costs. Free, fast and transparent.",
+                heroDesc: "We help you review your contracts and compare possible alternatives in Leipzig and across Germany. Whether switching makes sense depends on your tariff and needs.",
                 heroBtn1: "Book Appointment",
                 quickCheckTitle: "Quick Cost Check",
                 badgeGratis: "Free",
-                lblContractType: "Select contract type",
-                lblCurrentPay: "Current monthly costs (€)",
-                lblPhone: "Phone number for callback",
-                btnQuickSubmit: "Request Savings",
+                quickCheckDesc: "A reliable assessment is only possible after reviewing your contract. Arrange a personal consultation.",
+                quickCheckBook: "Request a consultation",
                 secServicesSub: "Transparent Optimization",
                 secServicesTitle: "Targeted Consulting for Your Contracts",
-                secServicesDesc: "We check your current contracts and find cheaper alternatives with equal or better benefits.",
+                secServicesDesc: "We help you compare your current contracts with possible alternatives. Terms and benefits depend on the provider and tariff.",
                 cardStromTitle: "Electricity Contract",
                 cardGasTitle: "Gas Contract",
                 cardNetTitle: "Internet & Landline",
@@ -490,18 +413,14 @@
                 btnMore2: "Book consultation",
                 btnMore3: "Book consultation",
                 btnMore4: "Book consultation",
+                aboutTitle: "Advice tailored to your needs",
+                aboutDesc: "We help you review your existing contracts and compare possible alternatives. Whether switching is worthwhile depends on your tariff, needs, and current terms.",
                 bookSub: "Appointment Booking",
-                bookTitle: "Book Your Personal Consultation Appointment",
-                bookDesc: "Free on-site in Leipzig (Rotfuchsstrasse 1), by phone or online video.",
-                lblBookName: "Full Name *",
-                lblBookPhone: "Phone Number / WhatsApp *",
-                lblBookService: "Topic *",
-                lblBookType: "Mode *",
-                lblBookDate: "Preferred Date *",
-                lblBookTime: "Preferred Time *",
-                btnBookSubmit: "Request Appointment",
-                confTitle: "Request Successful!",
-                confDesc: "Thank you. We will confirm your appointment shortly.",
+                bookTitle: "Arrange a consultation",
+                bookDesc: "Request an appointment by phone or WhatsApp.",
+                bookingContactDesc: "Online booking is currently unavailable. Please contact us directly to arrange an appointment.",
+                bookingCall: "Call",
+                bookingWhatsApp: "Contact us on WhatsApp",
                 cntTitle: "Contact & Address",
                 hoursTitle: "Opening & Consulting Hours"
             },
@@ -515,17 +434,15 @@
                 btnHeaderBook: "Randevu Al",
                 heroBadge: "Bağımsız Danışmanlık & Değişim Desteği",
                 heroTitle: "Elektrik, Gaz, İnternet ve Araç Sigortası tarifelerinizde en iyi karşılaştırma.",
-                heroDesc: "Leipzig ve tüm Almanya'da en uygun sözleşmeleri gizli ücret olmadan bulmanıza yardımcı oluyoruz.",
+                heroDesc: "Leipzig ve Almanya genelinde sözleşmelerinizi incelemenize ve olası alternatifleri karşılaştırmanıza yardımcı oluyoruz. Değişikliğin uygun olup olmadığı tarifenize ve ihtiyaçlarınıza bağlıdır.",
                 heroBtn1: "Randevu Oluştur",
                 quickCheckTitle: "Hızlı Maliyet Kontrolü",
                 badgeGratis: "Ücretsiz",
-                lblContractType: "Sözleşme türü seçin",
-                lblCurrentPay: "Mevcut aylık tutar (€)",
-                lblPhone: "Geri arama için telefon numarası",
-                btnQuickSubmit: "Tasarruf Talebi Gönder",
+                quickCheckDesc: "Güvenilir bir değerlendirme için önce sözleşmenizin incelenmesi gerekir. Kişisel danışmanlık için randevu alın.",
+                quickCheckBook: "Danışmanlık randevusu isteyin",
                 secServicesSub: "Şeffaf İyileştirme",
                 secServicesTitle: "Sözleşmeleriniz İçin Danışmanlık",
-                secServicesDesc: "Mevcut sözleşmelerinizi inceliyor, aynı veya daha iyi hizmet sunan uygun alternatifleri buluyoruz.",
+                secServicesDesc: "Mevcut sözleşmelerinizi olası alternatiflerle karşılaştırmanıza yardımcı oluyoruz. Koşullar ve hizmetler sağlayıcıya ve tarifeye göre değişir.",
                 cardStromTitle: "Elektrik Sözleşmesi",
                 cardGasTitle: "Gaz Sözleşmesi",
                 cardNetTitle: "İnternet & Sabit Hat",
@@ -534,18 +451,14 @@
                 btnMore2: "Randevu Al",
                 btnMore3: "Randevu Al",
                 btnMore4: "Randevu Al",
+                aboutTitle: "İhtiyaçlarınıza uygun danışmanlık",
+                aboutDesc: "Mevcut sözleşmelerinizi incelemenize ve olası alternatifleri karşılaştırmanıza yardımcı oluyoruz. Değişikliğin faydalı olup olmadığı tarifenize, ihtiyaçlarınıza ve güncel koşullara bağlıdır.",
                 bookSub: "Randevu Talebi",
-                bookTitle: "Kişisel Danışmanlık Randevunuzu Alın",
-                bookDesc: "Leipzig ofisimizde (Rotfuchsstrasse 1), telefonla veya online video ile ücretsiz.",
-                lblBookName: "Ad Soyad *",
-                lblBookPhone: "Telefon / WhatsApp *",
-                lblBookService: "Konu *",
-                lblBookType: "Görüşme Türü *",
-                lblBookDate: "Tarih *",
-                lblBookTime: "Saat *",
-                btnBookSubmit: "Randevuyu Onayla",
-                confTitle: "Talebiniz Alındı!",
-                confDesc: "Teşekkürler. Randevunuzu kısa süre içinde onaylayacağız.",
+                bookTitle: "Danışmanlık randevusu ayarlayın",
+                bookDesc: "Randevu talebinizi telefonla veya WhatsApp üzerinden iletin.",
+                bookingContactDesc: "Çevrimiçi randevu şu anda kullanılamıyor. Randevu ayarlamak için lütfen doğrudan bizimle iletişime geçin.",
+                bookingCall: "Ara",
+                bookingWhatsApp: "WhatsApp ile iletişim",
                 cntTitle: "İletişim & Adres",
                 hoursTitle: "Çalışma Saatleri"
             },
@@ -559,17 +472,15 @@
                 btnHeaderBook: "Randevû Çêbike",
                 heroBadge: "Şêwirmendiya Serbixwe",
                 heroTitle: "Buhayên Elektrîk, Gaz, Înternet û Sîgortaya Erebeyê bi berhevokeke çêtirîn.",
-                heroDesc: "Em li Leipzig û seranserî Almanyayê alîkariya we dikin da ku peymanên herî ارزان bibînin.",
+                heroDesc: "Em li Leipzig û li seranserê Almanyayê alîkariya we dikin ku peymanên xwe binirxînin û alternatîfên gengaz bidin ber hev. Guhertin ji tarîf û hewcedariyên we ve girêdayî ye.",
                 heroBtn1: "Randevuyê Çêbike",
                 quickCheckTitle: "Kontrola Lezgîn a Mesrefan",
                 badgeGratis: "Belaş",
-                lblContractType: "Tîpa peymanê hilbijêrin",
-                lblCurrentPay: "Mesrefa mehane ya niha (€)",
-                lblPhone: "Hejmara telefonê ji bo vegerê",
-                btnQuickSubmit: "Daxwaza Teserûfê Bikin",
+                quickCheckDesc: "Nirxandineke pêbawer tenê piştî kontrolkirina peymana we gengaz e. Ji bo şêwirmendiyê demekê saz bikin.",
+                quickCheckBook: "Daxwaza şêwirmendiyê bikin",
                 secServicesSub: "Optimîzasyona Zelal",
                 secServicesTitle: "Şêwirmendiya Peymanan",
-                secServicesDesc: "Em peymanên we yên niha kontrol dikin û alternatîfên ارزانtir peyda dikin.",
+                secServicesDesc: "Em alîkariya we dikin ku peymanên xwe yên niha bi alternatîfên gengaz re bidin ber hev. Şert û xizmet ji pêşkêşker û tarîfê ve girêdayî ne.",
                 cardStromTitle: "Peymana Elektrîkê",
                 cardGasTitle: "Peymana Gazê",
                 cardNetTitle: "Înternet & Telefon",
@@ -578,18 +489,14 @@
                 btnMore2: "Şêwirmendiyê Çêbike",
                 btnMore3: "Şêwirmendiyê Çêbike",
                 btnMore4: "Şêwirmendiyê Çêbike",
+                aboutTitle: "Şêwirmendiya li gorî hewcedariyên we",
+                aboutDesc: "Em alîkariya we dikin ku peymanên xwe yên heyî binirxînin û alternatîfên gengaz bidin ber hev. Fêdeya guhertinê ji tarîf, hewcedarî û şertên heyî ve girêdayî ye.",
                 bookSub: "Wexta Randevuyê",
-                bookTitle: "Randevuya Xwe ya Belaş Çêbikin",
-                bookDesc: "Li Leipzigê (Rotfuchsstrasse 1), bi telefonê an bi online video.",
-                lblBookName: "Nav û Paşnav *",
-                lblBookPhone: "Telefon / WhatsApp *",
-                lblBookService: "Mijar *",
-                lblBookType: "Asta Şêwirmendiyê *",
-                lblBookDate: "Roja *",
-                lblBookTime: "Saet *",
-                btnBookSubmit: "Randevuyê Piştrast Bikin",
-                confTitle: "Daxwaz Hat Wergirtin!",
-                confDesc: "Sipas. Em ê di demeke kurt de randevuya we piştrast bikin.",
+                bookTitle: "Demekê şêwirmendiyê saz bikin",
+                bookDesc: "Daxwaza randevûyê bi telefonê an WhatsAppê bikin.",
+                bookingContactDesc: "Niha veqetandina randevûyê ya serhêl tune ye. Ji kerema xwe ji bo sazkirina randevûyê rasterast bi me re têkilî daynin.",
+                bookingCall: "Telefon bike",
+                bookingWhatsApp: "Bi WhatsAppê têkilî daynin",
                 cntTitle: "Têkilî & Adres",
                 hoursTitle: "Demên Kar"
             },
@@ -603,17 +510,15 @@
                 btnHeaderBook: "احجز موعداً",
                 heroBadge: "استشارات مستقلة ومساعدة في التغيير",
                 heroTitle: "مقارنة مثالية لأسعار الكهرباء، الغاز، الإنترنت وتأمين السيارات.",
-                heroDesc: "نساعدك في لايبزيغ وكافة ألمانيا للعثور على أرخص العقود بدون تكاليف خفية.",
+                heroDesc: "نساعدك في لايبزيغ وفي جميع أنحاء ألمانيا على مراجعة عقودك ومقارنة البدائل الممكنة. يعتمد قرار التغيير على تعريفتك واحتياجاتك.",
                 heroBtn1: "احجز موعداً",
                 quickCheckTitle: "فحص سريع للتكاليف",
                 badgeGratis: "مجاناً",
-                lblContractType: "اختر نوع العقد",
-                lblCurrentPay: "التكلفة الشهرية الحالية (€)",
-                lblPhone: "رقم الهاتف للاتصال بك",
-                btnQuickSubmit: "طلب التوفير",
+                quickCheckDesc: "لا يمكن تقديم تقييم موثوق إلا بعد مراجعة عقدك. احجز استشارة شخصية.",
+                quickCheckBook: "اطلب استشارة",
                 secServicesSub: "تحسين شفاف",
                 secServicesTitle: "استشارات مخصصة لعقودك",
-                secServicesDesc: "نفحص عقودك الحالية ونوفر لك بدائل أفضل وأرخص بنفس الخدمات.",
+                secServicesDesc: "نساعدك على مقارنة عقودك الحالية بالبدائل الممكنة. تختلف الشروط والخدمات حسب مزود الخدمة والتعرفة.",
                 cardStromTitle: "عقد الكهرباء",
                 cardGasTitle: "عقد الغاز",
                 cardNetTitle: "الإنترنت والاتصالات",
@@ -622,18 +527,14 @@
                 btnMore2: "احجز استشارة",
                 btnMore3: "احجز استشارة",
                 btnMore4: "احجز استشارة",
+                aboutTitle: "استشارة تناسب احتياجاتك",
+                aboutDesc: "نساعدك على مراجعة عقودك الحالية ومقارنة البدائل الممكنة. يعتمد مدى جدوى التغيير على تعريفتك واحتياجاتك والشروط الحالية.",
                 bookSub: "حجز موعد",
-                bookTitle: "احجز موعد استشارتك الشخصية",
-                bookDesc: "مجاناً في مكتبنا في لايبزيغ (Rotfuchsstrasse 1)، عبر الهاتف أو الفيديو.",
-                lblBookName: "الاسم الكامل *",
-                lblBookPhone: "رقم الهاتف / واتساب *",
-                lblBookService: "الموضوع *",
-                lblBookType: "نوع الاستشارة *",
-                lblBookDate: "التاريخ *",
-                lblBookTime: "الوقت *",
-                btnBookSubmit: "تأكيد طلب الموعد",
-                confTitle: "تم استقبال الطلب بنجاح!",
-                confDesc: "شكراً لك. سنقوم بتأكيد موعدك قريباً.",
+                bookTitle: "رتب موعداً للاستشارة",
+                bookDesc: "اطلب موعداً عبر الهاتف أو واتساب.",
+                bookingContactDesc: "الحجز عبر الإنترنت غير متاح حالياً. يرجى التواصل معنا مباشرة لتنسيق موعد.",
+                bookingCall: "اتصل",
+                bookingWhatsApp: "تواصل عبر واتساب",
                 cntTitle: "الاتصال والعنوان",
                 hoursTitle: "أوقات العمل"
             }
@@ -655,40 +556,6 @@
             });
         }
 
-        function handleQuickCheck(e) {
-            e.preventDefault();
-            const type = document.getElementById('quickType').value;
-            const amount = document.getElementById('quickAmount').value;
-            const resultBox = document.getElementById('quickCheckResult');
-
-            const estMonthly = Math.round(amount * 0.25);
-            const estAnnual = estMonthly * 12;
-
-            resultBox.innerHTML = `
-                <div>Mögliche Ersparnis für <strong>${type}</strong>:</div>
-                <div class="text-base text-emerald-300 font-extrabold my-1">ca. ${estAnnual} € pro Jahr (${estMonthly} € / Monat)</div>
-                <div class="text-[11px] text-slate-300">Wir rufen Sie unter Ihrer Nummer zurück!</div>
-            `;
-            resultBox.classList.remove('hidden');
-        }
-
-        function handleBookingSubmit(e) {
-            e.preventDefault();
-            document.getElementById('bookingForm').classList.add('hidden');
-            document.getElementById('bookingConfirmation').classList.remove('hidden');
-        }
-
-        function preselectService(service) {
-            const select = document.getElementById('bookService');
-            if (select) {
-                for (let i = 0; i < select.options.length; i++) {
-                    if (select.options[i].value.includes(service)) {
-                        select.selectedIndex = i;
-                        break;
-                    }
-                }
-            }
-        }
     </script>
 </body>
 </html>
