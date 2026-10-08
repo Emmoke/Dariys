@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daryos® - Strom, Gas, Internet und Autoversicherung | Leipzig</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        daryosBlue: '#2563eb',
+                        daryosOrange: '#f97316',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-bg {
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.92), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .rtl {
+            direction: rtl;
+        }
+        .logo-font {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body class="bg-black text-slate-100 font-sans antialiased selection:bg-orange-500 selection:text-white">
+
+    <div class="bg-slate-950 text-slate-300 text-xs py-2.5 px-4 sm:px-8 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+            <div class="flex items-center space-x-6 rtl:space-x-reverse">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-orange-400"></i> Rotfuchsstrasse.1 04329 Leipzig</span>
+                <a href="tel:+4917643416174" class="hover:text-white transition flex items-center gap-2"><i class="fa-solid fa-phone text-blue-400"></i> +49 176 43416174</a>
+                <a href="mailto:daryos.kreis@gmail.com" class="hidden md:flex items-center gap-2 hover:text-white transition"><i class="fa-solid fa-envelope text-orange-400"></i> daryos.kreis@gmail.com</a>
+            </div>
+            <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                <div class="flex items-center gap-1 bg-slate-900 px-3 py-1 rounded-lg border border-slate-800">
+                    <i class="fa-solid fa-globe text-xs text-blue-400"></i>
+                    <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-transparent text-xs text-slate-200 outline-none cursor-pointer font-medium">
+                        <option value="de" class="text-slate-900">🇩🇪 Deutsch</option>
+                        <option value="en" class="text-slate-900">🇬🇧 English</option>
+                        <option value="tr" class="text-slate-900">🇹🇷 Türkçe</option>
+                        <option value="ku" class="text-slate-900">☀️ Kurdî</option>
+                        <option value="ar" class="text-slate-900">🇸🇦 العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            
+            <!-- EXACT DARYOS® LOGO matching image_a8e5e0.png -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="relative flex items-center gap-2 py-2">
+                    <!-- Curved Orange Arrow SVG -->
+                    <svg class="w-8 h-8 sm:w-10 sm:h-10 text-orange-500 transform -rotate-12 transition-transform group-hover:scale-110" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M 20,20 Q 50,80 80,50" />
+                        <path d="M 50,50 L 80,50 L 70,25" />
+                    </svg>
+                    <div class="flex flex-col">
+                        <div class="flex items-baseline">
+                            <span class="text-3xl sm:text-4xl font-bold logo-font text-blue-500 tracking-wide">Daryos</span>
+                            <span class="text-blue-400 text-xs ml-0.5 font-sans font-bold">®</span>
+                        </div>
+                        <span class="text-[10px] sm:text-[11px] text-indigo-300 tracking-normal font-sans -mt-1" id="navLogoSub">
+                            Strom, Gas, Internet und Autoversicherung
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center space-x-8 rtl:space-x-reverse font-medium text-sm">
+                <a href="#services" class="text-slate-300 hover:text-blue-400 transition" id="navServices">Leistungen</a>
+                <a href="#quickcheck" class="text-slate-300 hover:text-blue-400 transition" id="navQuickCheck">Schnell-Check</a>
+                <a href="#about" class="text-slate-300 hover:text-blue-400 transition" id="navAbout">Über uns</a>
+                <a href="#booking" class="text-slate-300 hover:text-blue-400 transition" id="navBooking">Terminbuchung</a>
+                <a href="#contact" class="text-slate-300 hover:text-blue-400 transition" id="navContact">Kontakt</a>
+            </nav>
+
+            <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                <a href="#booking" class="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-blue-600/30 transition text-sm flex items-center gap-2">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <span id="btnHeaderBook">Termin Buchen</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative hero-bg min-h-[650px] flex items-center py-16 px-4 sm:px-6 lg:px-8 text-white">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold uppercase tracking-wider">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span id="heroBadge">Unabhängige Beratung & Wechselhilfe</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight" id="heroTitle">
+                    Ihre Tarife für <span class="text-blue-500">Strom</span>, <span class="text-orange-500">Gas</span>, <span class="text-indigo-400">Internet</span> & <span class="text-emerald-400">Autoversicherung</span> im optimalen Vergleich.
+                </h1>
+                <p class="text-lg text-slate-300 max-w-2xl font-normal leading-relaxed" id="heroDesc">
+                    Wir helfen Ihnen in Leipzig und deutschlandweit, die günstigsten Verträge ohne versteckte Kosten zu finden. Kostenlos, schnell und transparent.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#booking" class="bg-orange-500 hover:bg-orange-400 text-slate-950 font-bold px-7 py-3.5 rounded-xl shadow-xl transition flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-alt"></i>
+                        <span id="heroBtn1">Termin Vereinbaren</span>
+                    </a>
+                    <a href="https://wa.me/4917643416174" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-7 py-3.5 rounded-xl shadow-lg transition flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp Beratung</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- EXACT QUICK SAVINGS CHECK FORM -->
+            <div class="lg:col-span-5" id="quickcheck">
+                <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-700/80 relative">
+                    <div class="flex items-center justify-between mb-6 border-b border-slate-800 pb-4">
+                        <h3 class="text-2xl font-bold text-white flex items-center gap-2" id="quickCheckTitle">
+                            Schnell-Kosten-Check
+                        </h3>
+                        <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-bold px-3 py-1 rounded-full uppercase" id="badgeGratis">Gratis</span>
+                    </div>
+
+                    <form onsubmit="handleQuickCheck(event)" class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" id="lblContractType">Vertragsart wählen</label>
+                            <select id="quickType" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer">
+                                <option value="Strom">⚡ Stromvertrag</option>
+                                <option value="Gas">🔥 Gasvertrag</option>
+                                <option value="Internet">🌐 Internet & Festnetz</option>
+                                <option value="KFZ">🚗 KFZ-Versicherung</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" id="lblCurrentPay">Aktuelle monatliche Kosten (€)</label>
+                            <input type="number" id="quickAmount" placeholder="z.B. 120" min="1" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" id="lblPhone">Telefonnummer für Rückruf</label>
+                            <input type="tel" id="quickPhone" placeholder="+49 176 ..." required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-base">
+                            <span id="btnQuickSubmit">Ersparnis Anfordern</span>
+                            <i class="fa-solid fa-paper-plane text-sm"></i>
+                        </button>
+                    </form>
+
+                    <div id="quickCheckResult" class="hidden mt-5 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl text-emerald-400 text-xs text-center font-semibold space-y-1"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-slate-950 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-orange-500 font-semibold text-xs uppercase tracking-widest" id="secServicesSub">Transparente Optimierung</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white" id="secServicesTitle">Gezielte Beratung für Ihre Verträge</h2>
+                <p class="text-slate-400 text-sm sm:text-base" id="secServicesDesc">Wir prüfen Ihre laufenden Verträge und ermitteln direkt günstigere Alternativen mit identischen oder besseren Leistungen.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Strom -->
+                <div class="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 shadow-xl flex flex-col justify-between hover:border-slate-700 transition">
+                    <div>
+                        <div class="relative h-48">
+                            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80" alt="Stromvertrag" class="w-full h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">⚡ Strom</div>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h3 class="text-xl font-bold text-white" id="cardStromTitle">Stromvertrag</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed" id="cardStromDesc">Wechsel zu günstigen Öko- oder Standardtarifen. Wir sichern Neukundenboni und Preisgarantien.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#booking" onclick="preselectService('Strom')" class="text-blue-400 font-bold text-xs flex items-center gap-2 hover:gap-3 transition-all">
+                            <span id="btnMore1">Beratung buchen</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Gas -->
+                <div class="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 shadow-xl flex flex-col justify-between hover:border-slate-700 transition">
+                    <div>
+                        <div class="relative h-48">
+                            <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=800&q=80" alt="Gasvertrag" class="w-full h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">🔥 Gas</div>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h3 class="text-xl font-bold text-white" id="cardGasTitle">Gasvertrag</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed" id="cardGasDesc">Schutz vor hohen Heizkosten. Vergleich von regionalen und überregionalen Gasanbietern.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#booking" onclick="preselectService('Gas')" class="text-orange-400 font-bold text-xs flex items-center gap-2 hover:gap-3 transition-all">
+                            <span id="btnMore2">Beratung buchen</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Internet -->
+                <div class="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 shadow-xl flex flex-col justify-between hover:border-slate-700 transition">
+                    <div>
+                        <div class="relative h-48">
+                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Internet" class="w-full h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">🌐 Internet</div>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h3 class="text-xl font-bold text-white" id="cardNetTitle">Internet & Festnetz</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed" id="cardNetDesc">DSL, Glasfaser & Kabel-Anschlüsse im Leistungsvergleich für maximale Bandbreite.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#booking" onclick="preselectService('Internet')" class="text-indigo-400 font-bold text-xs flex items-center gap-2 hover:gap-3 transition-all">
+                            <span id="btnMore3">Beratung buchen</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- KFZ -->
+                <div class="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 shadow-xl flex flex-col justify-between hover:border-slate-700 transition">
+                    <div>
+                        <div class="relative h-48">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80" alt="KFZ Versicherung" class="w-full h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">🚗 KFZ-Versicherung</div>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h3 class="text-xl font-bold text-white" id="cardInsTitle">Autoversicherung</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed" id="cardInsDesc">Haftpflicht, Teilkasko & Vollkasko. Wir prüfen SF-Klassen und Sparpotenziale.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#booking" onclick="preselectService('KFZ-Versicherung')" class="text-emerald-400 font-bold text-xs flex items-center gap-2 hover:gap-3 transition-all">
+                            <span id="btnMore4">Beratung buchen</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-20 bg-black border-t border-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 space-y-2">
+                <span class="text-blue-500 font-bold text-xs uppercase tracking-widest" id="bookSub">Terminvereinbarung</span>
+                <h2 class="text-3xl font-extrabold text-white" id="bookTitle">Buchen Sie Ihren persönlichen Beratungstermin</h2>
+                <p class="text-slate-400 text-sm" id="bookDesc">Kostenfrei vor Ort in Leipzig (Rotfuchsstrasse 1), telefonisch oder per Online-Video.</p>
+            </div>
+
+            <div class="bg-slate-900 p-8 sm:p-10 rounded-3xl border border-slate-800 shadow-2xl">
+                <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-2" id="lblBookName">Vollständiger Name *</label>
+                            <input type="text" required id="bookName" placeholder="Max Mustermann" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-2" id="lblBookPhone">Telefonnummer / WhatsApp *</label>
+                            <input type="tel" required id="bookPhone" placeholder="+49 176 12345678" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-2" id="lblBookService">Beratungsthema *</label>
+                            <select id="bookService" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="Alle">Gesamte Vertragsübersicht (Strom, Gas, Net, KFZ)</option>
+                                <option value="Strom">⚡ Stromvertrag</option>
+                                <option value="Gas">🔥 Gasvertrag</option>
+                                <option value="Internet">🌐 Internet & Festnetz</option>
+                                <option value="KFZ-Versicherung">🚗 Autoversicherung</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-2" id="lblBookType">Beratungsform *</label>
+                            <select id="bookType" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="Telefon">📞 Telefonische Beratung</option>
+                                <option value="Vor Ort">📍 Vor Ort im Büro (Rotfuchsstrasse 1, Leipzig)</option>
+                                <option value="Online Video">💻 Online Video-Meeting</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-2" id="lblBookDate">Wunschdatum *</label>
+                            <input type="date" required id="bookDate" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-2" id="lblBookTime">Wunschuhrzeit *</label>
+                            <select id="bookTime" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="10:00 Uhr">10:00 Uhr</option>
+                                <option value="12:00 Uhr">12:00 Uhr</option>
+                                <option value="14:30 Uhr">14:30 Uhr</option>
+                                <option value="16:30 Uhr">16:30 Uhr</option>
+                                <option value="18:00 Uhr">18:00 Uhr</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-orange-500 hover:bg-orange-400 text-slate-950 font-extrabold py-4 rounded-xl shadow-xl transition text-base flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span id="btnBookSubmit">Termin Verbindlich Anfragen</span>
+                    </button>
+                </form>
+
+                <div id="bookingConfirmation" class="hidden mt-6 p-6 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl text-center text-emerald-400 space-y-2">
+                    <i class="fa-solid fa-circle-check text-4xl"></i>
+                    <h4 class="text-xl font-bold" id="confTitle">Terminanfrage Erfolgreich!</h4>
+                    <p class="text-sm text-slate-300" id="confDesc">Vielen Dank. Wir bestätigen Ihren Termin in Kürze per SMS oder Anruf.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-slate-950 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 space-y-6">
+                    <h3 class="text-2xl font-bold text-white" id="cntTitle">Kontakt & Adresse</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-location-dot text-orange-500 text-lg mt-1"></i>
+                            <div>
+                                <div class="text-xs text-slate-400">Adresse</div>
+                                <div class="text-sm font-semibold text-white">Rotfuchsstrasse.1 04329 Leipzig</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-phone text-blue-400 text-lg mt-1"></i>
+                            <div>
+                                <div class="text-xs text-slate-400">Telefon / WhatsApp</div>
+                                <a href="tel:+4917643416174" class="text-sm font-semibold text-white hover:text-blue-400">+49 176 43416174</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-envelope text-orange-400 text-lg mt-1"></i>
+                            <div>
+                                <div class="text-xs text-slate-400">E-Mail</div>
+                                <a href="mailto:daryos.kreis@gmail.com" class="text-sm font-semibold text-white hover:text-blue-400">daryos.kreis@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 bg-slate-900 p-8 rounded-3xl border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4" id="hoursTitle">Öffnungs- & Beratungszeiten</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mb-6">
+                            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 flex justify-between">
+                                <span class="text-slate-400">Montag – Freitag:</span>
+                                <span class="font-bold text-white">09:00 – 18:00 Uhr</span>
+                            </div>
+                            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 flex justify-between">
+                                <span class="text-slate-400">Samstag:</span>
+                                <span class="font-bold text-white">10:00 – 14:00 Uhr</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl overflow-hidden border border-slate-800 h-48 bg-slate-950">
+                        <iframe class="w-full h-full border-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2492.203112260408!2d12.4411111!3d51.3438889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f95f4e0c3d2f%3A0x123456789abcdef!2sRotfuchsstra%C3%9Fe%201%2C%2004329%20Leipzig!5e0!3m2!1sde!2sde!4v1680000000000!5m2!1sde!2sde" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-slate-500 py-8 border-t border-slate-900 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <span class="text-blue-500 font-bold logo-font text-xl">Daryos®</span>
+                <span>– Strom, Gas, Internet und Autoversicherung</span>
+            </div>
+            <div>
+                © <span id="currentYear"></span> Daryos®. Alle Rechte vorbehalten. Rotfuchsstrasse.1 04329 Leipzig
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        const translations = {
+            de: {
+                navLogoSub: "Strom, Gas, Internet und Autoversicherung",
+                navServices: "Leistungen",
+                navQuickCheck: "Schnell-Check",
+                navAbout: "Über uns",
+                navBooking: "Terminbuchung",
+                navContact: "Kontakt",
+                btnHeaderBook: "Termin Buchen",
+                heroBadge: "Unabhängige Beratung & Wechselhilfe",
+                heroTitle: "Ihre Tarife für Strom, Gas, Internet & Autoversicherung im optimalen Vergleich.",
+                heroDesc: "Wir helfen Ihnen in Leipzig und deutschlandweit, die günstigsten Verträge ohne versteckte Kosten zu finden. Kostenlos, schnell und transparent.",
+                heroBtn1: "Termin Vereinbaren",
+                quickCheckTitle: "Schnell-Kosten-Check",
+                badgeGratis: "Gratis",
+                lblContractType: "Vertragsart wählen",
+                lblCurrentPay: "Aktuelle monatliche Kosten (€)",
+                lblPhone: "Telefonnummer für Rückruf",
+                btnQuickSubmit: "Ersparnis Anfordern",
+                secServicesSub: "Transparente Optimierung",
+                secServicesTitle: "Gezielte Beratung für Ihre Verträge",
+                secServicesDesc: "Wir prüfen Ihre laufenden Verträge und ermitteln direkt günstigere Alternativen mit identischen oder besseren Leistungen.",
+                cardStromTitle: "Stromvertrag",
+                cardStromDesc: "Wechsel zu günstigen Öko- oder Standardtarifen. Wir sichern Neukundenboni und Preisgarantien.",
+                cardGasTitle: "Gasvertrag",
+                cardGasDesc: "Schutz vor hohen Heizkosten. Vergleich von regionalen und überregionalen Gasanbietern.",
+                cardNetTitle: "Internet & Festnetz",
+                cardNetDesc: "DSL, Glasfaser & Kabel-Anschlüsse im Leistungsvergleich für maximale Bandbreite.",
+                cardInsTitle: "Autoversicherung",
+                cardInsDesc: "Haftpflicht, Teilkasko & Vollkasko. Wir prüfen SF-Klassen und Sparpotenziale.",
+                btnMore1: "Beratung buchen",
+                btnMore2: "Beratung buchen",
+                btnMore3: "Beratung buchen",
+                btnMore4: "Beratung buchen",
+                bookSub: "Terminvereinbarung",
+                bookTitle: "Buchen Sie Ihren persönlichen Beratungstermin",
+                bookDesc: "Kostenfrei vor Ort in Leipzig (Rotfuchsstrasse 1), telefonisch oder per Online-Video.",
+                lblBookName: "Vollständiger Name *",
+                lblBookPhone: "Telefonnummer / WhatsApp *",
+                lblBookService: "Beratungsthema *",
+                lblBookType: "Beratungsform *",
+                lblBookDate: "Wunschdatum *",
+                lblBookTime: "Wunschuhrzeit *",
+                btnBookSubmit: "Termin Verbindlich Anfragen",
+                confTitle: "Terminanfrage Erfolgreich!",
+                confDesc: "Vielen Dank. Wir bestätigen Ihren Termin in Kürze per SMS oder Anruf.",
+                cntTitle: "Kontakt & Adresse",
+                hoursTitle: "Öffnungs- & Beratungszeiten"
+            },
+            en: {
+                navLogoSub: "Electricity, Gas, Internet and Car Insurance",
+                navServices: "Services",
+                navQuickCheck: "Quick Check",
+                navAbout: "About Us",
+                navBooking: "Booking",
+                navContact: "Contact",
+                btnHeaderBook: "Book Appointment",
+                heroBadge: "Independent Consulting & Switching Help",
+                heroTitle: "Your tariffs for Electricity, Gas, Internet & Car Insurance optimal compared.",
+                heroDesc: "We help you in Leipzig and across Germany find the cheapest contracts without hidden costs. Free, fast and transparent.",
+                heroBtn1: "Book Appointment",
+                quickCheckTitle: "Quick Cost Check",
+                badgeGratis: "Free",
+                lblContractType: "Select contract type",
+                lblCurrentPay: "Current monthly costs (€)",
+                lblPhone: "Phone number for callback",
+                btnQuickSubmit: "Request Savings",
+                secServicesSub: "Transparent Optimization",
+                secServicesTitle: "Targeted Consulting for Your Contracts",
+                secServicesDesc: "We check your current contracts and find cheaper alternatives with equal or better benefits.",
+                cardStromTitle: "Electricity Contract",
+                cardGasTitle: "Gas Contract",
+                cardNetTitle: "Internet & Landline",
+                cardInsTitle: "Car Insurance",
+                btnMore1: "Book consultation",
+                btnMore2: "Book consultation",
+                btnMore3: "Book consultation",
+                btnMore4: "Book consultation",
+                bookSub: "Appointment Booking",
+                bookTitle: "Book Your Personal Consultation Appointment",
+                bookDesc: "Free on-site in Leipzig (Rotfuchsstrasse 1), by phone or online video.",
+                lblBookName: "Full Name *",
+                lblBookPhone: "Phone Number / WhatsApp *",
+                lblBookService: "Topic *",
+                lblBookType: "Mode *",
+                lblBookDate: "Preferred Date *",
+                lblBookTime: "Preferred Time *",
+                btnBookSubmit: "Request Appointment",
+                confTitle: "Request Successful!",
+                confDesc: "Thank you. We will confirm your appointment shortly.",
+                cntTitle: "Contact & Address",
+                hoursTitle: "Opening & Consulting Hours"
+            },
+            tr: {
+                navLogoSub: "Elektrik, Gaz, İnternet ve Araç Sigortası",
+                navServices: "Hizmetler",
+                navQuickCheck: "Hızlı Kontrol",
+                navAbout: "Hakkımızda",
+                navBooking: "Randevu Al",
+                navContact: "İletişim",
+                btnHeaderBook: "Randevu Al",
+                heroBadge: "Bağımsız Danışmanlık & Değişim Desteği",
+                heroTitle: "Elektrik, Gaz, İnternet ve Araç Sigortası tarifelerinizde en iyi karşılaştırma.",
+                heroDesc: "Leipzig ve tüm Almanya'da en uygun sözleşmeleri gizli ücret olmadan bulmanıza yardımcı oluyoruz.",
+                heroBtn1: "Randevu Oluştur",
+                quickCheckTitle: "Hızlı Maliyet Kontrolü",
+                badgeGratis: "Ücretsiz",
+                lblContractType: "Sözleşme türü seçin",
+                lblCurrentPay: "Mevcut aylık tutar (€)",
+                lblPhone: "Geri arama için telefon numarası",
+                btnQuickSubmit: "Tasarruf Talebi Gönder",
+                secServicesSub: "Şeffaf İyileştirme",
+                secServicesTitle: "Sözleşmeleriniz İçin Danışmanlık",
+                secServicesDesc: "Mevcut sözleşmelerinizi inceliyor, aynı veya daha iyi hizmet sunan uygun alternatifleri buluyoruz.",
+                cardStromTitle: "Elektrik Sözleşmesi",
+                cardGasTitle: "Gaz Sözleşmesi",
+                cardNetTitle: "İnternet & Sabit Hat",
+                cardInsTitle: "Araç Sigortası",
+                btnMore1: "Randevu Al",
+                btnMore2: "Randevu Al",
+                btnMore3: "Randevu Al",
+                btnMore4: "Randevu Al",
+                bookSub: "Randevu Talebi",
+                bookTitle: "Kişisel Danışmanlık Randevunuzu Alın",
+                bookDesc: "Leipzig ofisimizde (Rotfuchsstrasse 1), telefonla veya online video ile ücretsiz.",
+                lblBookName: "Ad Soyad *",
+                lblBookPhone: "Telefon / WhatsApp *",
+                lblBookService: "Konu *",
+                lblBookType: "Görüşme Türü *",
+                lblBookDate: "Tarih *",
+                lblBookTime: "Saat *",
+                btnBookSubmit: "Randevuyu Onayla",
+                confTitle: "Talebiniz Alındı!",
+                confDesc: "Teşekkürler. Randevunuzu kısa süre içinde onaylayacağız.",
+                cntTitle: "İletişim & Adres",
+                hoursTitle: "Çalışma Saatleri"
+            },
+            ku: {
+                navLogoSub: "Elektrîk, Gaz, Înternet û Sîgortaya Erebeyê",
+                navServices: "Xizmetguzarî",
+                navQuickCheck: "Kontrola Lezgîn",
+                navAbout: "Derbarê Me de",
+                navBooking: "Randevû",
+                navContact: "Têkilî",
+                btnHeaderBook: "Randevû Çêbike",
+                heroBadge: "Şêwirmendiya Serbixwe",
+                heroTitle: "Buhayên Elektrîk, Gaz, Înternet û Sîgortaya Erebeyê bi berhevokeke çêtirîn.",
+                heroDesc: "Em li Leipzig û seranserî Almanyayê alîkariya we dikin da ku peymanên herî ارزان bibînin.",
+                heroBtn1: "Randevuyê Çêbike",
+                quickCheckTitle: "Kontrola Lezgîn a Mesrefan",
+                badgeGratis: "Belaş",
+                lblContractType: "Tîpa peymanê hilbijêrin",
+                lblCurrentPay: "Mesrefa mehane ya niha (€)",
+                lblPhone: "Hejmara telefonê ji bo vegerê",
+                btnQuickSubmit: "Daxwaza Teserûfê Bikin",
+                secServicesSub: "Optimîzasyona Zelal",
+                secServicesTitle: "Şêwirmendiya Peymanan",
+                secServicesDesc: "Em peymanên we yên niha kontrol dikin û alternatîfên ارزانtir peyda dikin.",
+                cardStromTitle: "Peymana Elektrîkê",
+                cardGasTitle: "Peymana Gazê",
+                cardNetTitle: "Înternet & Telefon",
+                cardInsTitle: "Sîgortaya Erebeyê",
+                btnMore1: "Şêwirmendiyê Çêbike",
+                btnMore2: "Şêwirmendiyê Çêbike",
+                btnMore3: "Şêwirmendiyê Çêbike",
+                btnMore4: "Şêwirmendiyê Çêbike",
+                bookSub: "Wexta Randevuyê",
+                bookTitle: "Randevuya Xwe ya Belaş Çêbikin",
+                bookDesc: "Li Leipzigê (Rotfuchsstrasse 1), bi telefonê an bi online video.",
+                lblBookName: "Nav û Paşnav *",
+                lblBookPhone: "Telefon / WhatsApp *",
+                lblBookService: "Mijar *",
+                lblBookType: "Asta Şêwirmendiyê *",
+                lblBookDate: "Roja *",
+                lblBookTime: "Saet *",
+                btnBookSubmit: "Randevuyê Piştrast Bikin",
+                confTitle: "Daxwaz Hat Wergirtin!",
+                confDesc: "Sipas. Em ê di demeke kurt de randevuya we piştrast bikin.",
+                cntTitle: "Têkilî & Adres",
+                hoursTitle: "Demên Kar"
+            },
+            ar: {
+                navLogoSub: "الكهرباء، الغاز، الإنترنت وتأمين السيارات",
+                navServices: "الخدمات",
+                navQuickCheck: "فحص سريع",
+                navAbout: "من نحن",
+                navBooking: "حجز موعد",
+                navContact: "الاتصال",
+                btnHeaderBook: "احجز موعداً",
+                heroBadge: "استشارات مستقلة ومساعدة في التغيير",
+                heroTitle: "مقارنة مثالية لأسعار الكهرباء، الغاز، الإنترنت وتأمين السيارات.",
+                heroDesc: "نساعدك في لايبزيغ وكافة ألمانيا للعثور على أرخص العقود بدون تكاليف خفية.",
+                heroBtn1: "احجز موعداً",
+                quickCheckTitle: "فحص سريع للتكاليف",
+                badgeGratis: "مجاناً",
+                lblContractType: "اختر نوع العقد",
+                lblCurrentPay: "التكلفة الشهرية الحالية (€)",
+                lblPhone: "رقم الهاتف للاتصال بك",
+                btnQuickSubmit: "طلب التوفير",
+                secServicesSub: "تحسين شفاف",
+                secServicesTitle: "استشارات مخصصة لعقودك",
+                secServicesDesc: "نفحص عقودك الحالية ونوفر لك بدائل أفضل وأرخص بنفس الخدمات.",
+                cardStromTitle: "عقد الكهرباء",
+                cardGasTitle: "عقد الغاز",
+                cardNetTitle: "الإنترنت والاتصالات",
+                cardInsTitle: "تأمين السيارات",
+                btnMore1: "احجز استشارة",
+                btnMore2: "احجز استشارة",
+                btnMore3: "احجز استشارة",
+                btnMore4: "احجز استشارة",
+                bookSub: "حجز موعد",
+                bookTitle: "احجز موعد استشارتك الشخصية",
+                bookDesc: "مجاناً في مكتبنا في لايبزيغ (Rotfuchsstrasse 1)، عبر الهاتف أو الفيديو.",
+                lblBookName: "الاسم الكامل *",
+                lblBookPhone: "رقم الهاتف / واتساب *",
+                lblBookService: "الموضوع *",
+                lblBookType: "نوع الاستشارة *",
+                lblBookDate: "التاريخ *",
+                lblBookTime: "الوقت *",
+                btnBookSubmit: "تأكيد طلب الموعد",
+                confTitle: "تم استقبال الطلب بنجاح!",
+                confDesc: "شكراً لك. سنقوم بتأكيد موعدك قريباً.",
+                cntTitle: "الاتصال والعنوان",
+                hoursTitle: "أوقات العمل"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const data = translations[lang] || translations.de;
+            if (lang === 'ar') {
+                document.body.classList.add('rtl');
+            } else {
+                document.body.classList.remove('rtl');
+            }
+
+            Object.keys(data).forEach(key => {
+                const el = document.getElementById(key);
+                if (el) {
+                    el.textContent = data[key];
+                }
+            });
+        }
+
+        function handleQuickCheck(e) {
+            e.preventDefault();
+            const type = document.getElementById('quickType').value;
+            const amount = document.getElementById('quickAmount').value;
+            const resultBox = document.getElementById('quickCheckResult');
+
+            const estMonthly = Math.round(amount * 0.25);
+            const estAnnual = estMonthly * 12;
+
+            resultBox.innerHTML = `
+                <div>Mögliche Ersparnis für <strong>${type}</strong>:</div>
+                <div class="text-base text-emerald-300 font-extrabold my-1">ca. ${estAnnual} € pro Jahr (${estMonthly} € / Monat)</div>
+                <div class="text-[11px] text-slate-300">Wir rufen Sie unter Ihrer Nummer zurück!</div>
+            `;
+            resultBox.classList.remove('hidden');
+        }
+
+        function handleBookingSubmit(e) {
+            e.preventDefault();
+            document.getElementById('bookingForm').classList.add('hidden');
+            document.getElementById('bookingConfirmation').classList.remove('hidden');
+        }
+
+        function preselectService(service) {
+            const select = document.getElementById('bookService');
+            if (select) {
+                for (let i = 0; i < select.options.length; i++) {
+                    if (select.options[i].value.includes(service)) {
+                        select.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
